@@ -74,14 +74,13 @@ Function-Profiler-Intel-PIN
 │
 ├── outputs/
 │   ├── funccount.out
-│   ├── graph.png
-│   └── final.png
+│   ├── callgraph.dot
+│   └── callgraph.png
 │
 ├── docs/
 ├── README.md
 └── LICENSE
 ```
-
 ---
 
 ## Sample Output
