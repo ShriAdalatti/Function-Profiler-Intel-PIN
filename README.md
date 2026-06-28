@@ -149,19 +149,3 @@ dot -Tpng callgraph.dot -o callgraph.png
 
 ---
 
-## Future Improvements
-
-- Memory profiling
-- Cache analysis
-- Multi-threaded program profiling
-- Interactive visualization
-
----
-
-## Author
-
-**Shri Adalatti**
-
-B.Tech in Computer Science and Engineering
-
-Indian Institute of Technology Ropar
