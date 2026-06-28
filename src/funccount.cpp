@@ -8,19 +8,19 @@ using std::string;
 using std::ofstream;
 using std::map;
 
-// 🔥 map to store instruction count per function
+//  map to store instruction count per function
 map<string, UINT64> funcInstrCount;
 
-// 🔥 output file
+// output file
 ofstream OutFile("funccount.out");
 
-// 🔥 count instruction for each function
+// count instruction for each function
 VOID CountInstruction(string *name)
 {
     funcInstrCount[*name]++;
 }
 
-// 🔥 instrument each routine (function)
+// instrument each routine (function)
 VOID Routine(RTN rtn, VOID *v)
 {
     if (!RTN_Valid(rtn)) return;
@@ -45,7 +45,7 @@ VOID Routine(RTN rtn, VOID *v)
     RTN_Close(rtn);
 }
 
-// 🔥 print output at end
+// print output at end
 VOID Fini(INT32 code, VOID *v)
 {
     for (auto it = funcInstrCount.begin(); it != funcInstrCount.end(); it++)
@@ -55,7 +55,7 @@ VOID Fini(INT32 code, VOID *v)
     OutFile.close();
 }
 
-// 🔥 main
+// main
 int main(int argc, char *argv[])
 {
     if (PIN_Init(argc, argv))
