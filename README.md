@@ -155,11 +155,13 @@ cat funccount.out
 
 ## 6. Generate the graphical call graph
 
-```bash
-dot -Tpng callgraph.dot -o callgraph.png
-```
+## Call Graph
 
----
+![Call Graph](outputs/graph.png)
+
+## Profiling Output
+
+![Profiling Output](outputs/final.png)
 
 # 📊 Outputs
 
