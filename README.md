@@ -1,40 +1,47 @@
-# Function Profiler & Call Graph Generator using Intel Pin
+# 🚀 Function Profiler & Call Graph Generator using Intel Pin
 
-A function-level profiler developed using Intel Pin Dynamic Binary Instrumentation (DBI) to analyze runtime program execution, collect instruction-level statistics, and generate graphical call graphs for performance analysis.
-
----
-
-## Project Overview 
-
-This project was developed as part of my Computer Architecture course to understand how runtime program profiling works using Intel Pin.
-
-The profiler dynamically instruments a target program during execution without modifying its source code. It records the number of instructions executed by each function, tracks caller-callee relationships, and generates both a profiling report and a graphical call graph. The project helped me explore dynamic binary instrumentation, function profiling, and software performance analysis.
+A simple function-level profiler built using **Intel Pin Dynamic Binary Instrumentation (DBI)**. The profiler analyzes a program while it is running, counts the instructions executed by each function, tracks function calls, and generates a graphical call graph to help visualize the program's execution flow.
 
 ---
 
-## Features
+## 📖 About the Project
 
-- Dynamic function instrumentation using Intel Pin
+This project was developed as part of my **Computer Architecture** course to understand how runtime profiling works using **Intel Pin**.
+
+Instead of modifying the source code, Intel Pin instruments the executable while it is running. Using this approach, the profiler records:
+
+- Number of instructions executed by each function
+- Number of times each function is called
+- Caller → callee relationships
+- Performance hotspots based on instruction count
+
+Finally, it generates both a detailed profiling report (`funccount.out`) and a graphical call graph (`callgraph.png`) for easy analysis.
+
+---
+
+## ✨ Features
+
+- Dynamic runtime instrumentation using Intel Pin
 - Function-wise instruction counting
 - Function call counting
 - Caller–callee relationship tracking
-- Graphviz-based call graph generation
-- Performance hotspot identification
-- Profiling report similar to GNU gprof
+- Automatic call graph generation using Graphviz
+- Identifies performance hotspots
+- Generates a profiler report similar to GNU gprof
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Language:** C++
 - **Framework:** Intel Pin
 - **Visualization:** Graphviz
 - **Compiler:** GCC
-- **Operating System:** Ubuntu (WSL)
+- **Platform:** Ubuntu (WSL)
 
 ---
 
-## How It Works
+## ⚙️ How It Works
 
 ```text
 Target Program
@@ -43,24 +50,24 @@ Target Program
  Intel Pin
       │
       ▼
-Function Instrumentation
+Instrument Functions
       │
       ▼
-Instruction Counting
+Count Instructions
       │
       ▼
-Call Tracking
+Track Function Calls
       │
       ▼
 Generate Reports
       │
       ▼
-Graphviz Call Graph
+Create Call Graph
 ```
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 Function-Profiler-Intel-PIN
@@ -81,46 +88,54 @@ Function-Profiler-Intel-PIN
 ├── README.md
 └── LICENSE
 ```
+
 ---
 
-## Sample Output
+## 📊 Sample Output
 
-The profiler generates a graphical call graph showing function hierarchy, instruction counts, execution percentages, and performance hotspots.
+The profiler generates a graphical call graph showing:
+
+- Function hierarchy
+- Instruction counts
+- Instruction percentage for each function
+- Caller–callee relationships
+- Performance hotspots
 
 <p align="center">
-<img src="outputs/callgraph.png" alt="Generated Call Graph" width="90%">
+  <img src="outputs/callgraph.png" alt="Generated Call Graph" width="90%">
 </p>
 
-From the generated output:
+### From the generated output
 
-- `matrix_multiply()` accounts for most of the executed instructions, making it the primary performance hotspot.
-- The call graph clearly shows caller-callee relationships.
-- Recursive functions such as `fib()` and `factorial()` are also captured correctly.
+- `matrix_multiply()` executes the highest number of instructions, making it the primary performance hotspot.
+- The call graph clearly shows how functions call one another.
+- Recursive functions such as `fib()` and `factorial()` are represented correctly with self-loops.
+- Functions like `bubble_sort()` and `swap()` are also highlighted based on their instruction contribution.
 
 ---
 
-## Generated Files
+## 📄 Generated Files
 
-### funccount.out
+### `funccount.out`
 
 Contains:
 
 - Function name
 - Instruction count
 - Number of function calls
-- Percentage of total instructions
+- Percentage of total executed instructions
 
-### callgraph.dot
+### `callgraph.dot`
 
-Graphviz representation of the generated call graph.
+A Graphviz DOT file describing the generated call graph.
 
-### callgraph.png
+### `callgraph.png`
 
-Graphical visualization of function execution and call relationships.
+A graphical visualization of function execution, instruction counts, and caller–callee relationships.
 
 ---
 
-## How to Run
+## ▶️ How to Run
 
 ```bash
 cd ~/pin_kit/source/tools/ManualExamples
@@ -138,13 +153,17 @@ dot -Tpng callgraph.dot -o callgraph.png
 
 ---
 
-## Applications
+## 💡 Applications
 
 - Software performance analysis
-- Performance hotspot detection
-- Program execution analysis
-- Software optimization
+- Finding performance hotspots
+- Understanding program execution flow
+- Performance optimization
 - Compiler and Operating Systems research
+- Learning Dynamic Binary Instrumentation (DBI)
 
 ---
 
+## 🎯 Conclusion
+
+This project demonstrates how **Intel Pin** can be used to build a lightweight function profiler without modifying the original program. By dynamically instrumenting the executable, the profiler collects instruction-level statistics, tracks function calls, and generates an easy-to-understand call graph that helps analyze program behavior and identify performance hotspots.
