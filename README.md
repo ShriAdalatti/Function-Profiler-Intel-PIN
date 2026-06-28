@@ -4,7 +4,7 @@ A function-level profiler developed using Intel Pin Dynamic Binary Instrumentati
 
 ---
 
-## Project Overview
+## Project Overview 
 
 This project was developed as part of my Computer Architecture course to understand how runtime program profiling works using Intel Pin.
 
