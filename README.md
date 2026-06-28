@@ -89,7 +89,7 @@ Function-Profiler-Intel-PIN
 The profiler generates a graphical call graph showing function hierarchy, instruction counts, execution percentages, and performance hotspots.
 
 <p align="center">
-<img src="outputs/graph.png" width="100%">
+<img src="outputs/callgraph.png" width="90%">
 </p>
 
 From the generated output:
